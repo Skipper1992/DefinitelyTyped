@@ -89,6 +89,16 @@ interface ICacheConfig {
     expiresAt?: number;
 }
 export function cache(cacheConfig: ICacheConfig): (target: any, key: any, descriptor: any) => any;
+
+interface ITagsConfig {
+    tags?: Array<string>;
+}
+export function tags(tagsConfig: ITagsConfig): (target: any, key: any, descriptor: any) => any;
+interface IDescriptionConfig {
+    description?: string;
+}
+export function description(descriptionConfig: IDescriptionConfig): (target: any, key: any, descriptor: any) => any;
+
 export function pre(pre: {
     [key: string]: any;
 }): (target: any, key: any, descriptor: any) => any;
